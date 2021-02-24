@@ -1,30 +1,23 @@
 import React from 'react';
+import ItemsListItems from './ItemsListItems';
+import './itemslist.css';
 
-const ItemsList = () => {
-  const items = [
-    'Изучить Reactjs',
-    'Построить ToDo приложение',
-    'Построить Landing Page',
-    'Построить систему навигации по Landing Page',
-    'Построить всплывающее окно с ФОС',
-    'Построить систему валидации ФОС',
-    'Построить галерею ихображений ',
-    'Построить слайдер контента',
-    'Настроить связь с базой Firebase',
-  ];
+const ItemsList = ({ todos }) => {
+  const elements = todos.map((item) => {
+    const { id, ...itemProp } = item;
+    return (
+      <li key={id} className="list-group-item">
+        {/* <ItemsListItems label={item.label} important={item.important} />
+         */}
+
+        <ItemsListItems {...itemProp} />
+      </li>
+    );
+  });
+
   return (
     <div>
-      <ul>
-        <li>{items[0]} </li>
-        <li>{items[1]} </li>
-        <li>{items[2]} </li>
-        <li>{items[3]} </li>
-        <li>{items[4]} </li>
-        <li>{items[5]} </li>
-        <li>{items[6]} </li>
-        <li>{items[7]} </li>
-        <li>{items[8]} </li>
-      </ul>
+      <ul className="list-group todo-list">{elements}</ul>
     </div>
   );
 };

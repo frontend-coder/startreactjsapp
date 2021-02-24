@@ -1,0 +1,17 @@
+
+.todo-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.items-list-items {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  
+}
+.btn {
+  margin-left: .25rem;
+  margin-right: .25rem;
+  min-width:2.00rem;
+}
